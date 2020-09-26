@@ -47,6 +47,7 @@ class vesti extends Component {
     })
       .then((response) => {
         const dobijena = response.data;
+        console.log(dobijena);
         this.setState((previousState) => ({
           vest: [...previousState.vest, dobijena],
         }));
