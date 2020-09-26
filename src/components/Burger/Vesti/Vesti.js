@@ -8,6 +8,7 @@ import TabelaStudente from "../TabelaStudenata/TabelaStudente";
 import Button from '../../UI/Button/Button';
 import Modal from '../../UI/Modal/Modal';
 import DodajVest from "./DodajVest";
+import  Toolbar from '../../Navigation/Toolbar/Toolbar';
 
 
 
@@ -89,6 +90,43 @@ izadji(){
     if (this.state.vest.length === 0 || this.state.news.length === 0) {
       return <div></div>;
     } else {
+      if(this.props.isGuest){
+        return(
+          <div >
+            <Toolbar isAuthenticated={false} isAuth={false} isGuest={this.props.isGuest} />
+            <div className={classes.Tool}>
+          <h1>Zanimljivost{this.state.vest[0].number}:</h1>
+          </div>
+          <p>{this.state.vest[0].text}</p>
+          <div className={classes.Cont}>
+          <div className={classes.Card}>
+              <h3 className={classes.Head}>{this.state.news[0].naslov}</h3>
+              <p className={classes.Para}>{this.state.news[0].vest}</p>
+            </div>
+            <div className={classes.Card}>
+              <h3 className={classes.Head}>{this.state.news[0].naslov}</h3>
+              <p className={classes.Para}>{this.state.news[0].vest}</p>
+            </div>
+            <div className={classes.Card}>
+              <h3 className={classes.Head}>{this.state.news[0].naslov}</h3>
+              <p className={classes.Para}>{this.state.news[0].vest}</p>
+            </div>
+            <div className={classes.Card}>
+              <h3 className={classes.Head}>{this.state.news[0].naslov}</h3>
+              <p className={classes.Para}>{this.state.news[0].vest}</p>
+            </div>
+            <div className={classes.Card}>
+              <h3 className={classes.Head}>{this.state.news[0].naslov}</h3>
+              <p className={classes.Para}>{this.state.news[0].vest}</p>
+            </div>
+          </div>
+          {this.props.isAuthenticated ? <div className={classes.Butt}  >
+            <Button btnType="Success" clicked={this.promeni} >Dodaj vest</Button> </div>: null }
+          <TabelaStudente isGuest={this.props.isGuest} isAuth={false} className={classes.Tabela} />
+          <Footer />
+        </div>
+        );
+      }
       return (
         <div>
           <Modal show={this.state.isSelected} clicked={this.izadji}>
@@ -120,7 +158,7 @@ izadji(){
           </div>
           {this.props.isAuthenticated ? <div className={classes.Butt}  >
             <Button btnType="Success" clicked={this.promeni} >Dodaj vest</Button> </div>: null }
-          <TabelaStudente className={classes.Tabela} />
+          <TabelaStudente isAuth={this.props.isAuthenticated} className={classes.Tabela} />
           <Footer />
         </div>
       );

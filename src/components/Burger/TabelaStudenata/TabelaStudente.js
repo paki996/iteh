@@ -96,6 +96,7 @@ axios
       beforeSaveCall: this.onBeforeSave,
       afterSaveCall: this.onAfterSave
     }
+    if(this.props.isAuth === true){
     return (
       <Aux>
       <Modal show={this.state.isSelected}>
@@ -118,6 +119,25 @@ axios
         
       </Aux>
     );
+    }else{
+      return (
+        <Aux>
+          <BootstrapTable className={classes.BootstrapTable} data={this.state.student}  hover={true}  search bordered={true}
+          containerStyle={ { border: 'black solid 1px'}}
+          headerStyle={ {border: 'black solid 1px', background : 'orange' } }
+          bodyStyle={{border: 'black solid 1px',background: 'darkkhaki'}}
+
+          >
+            <TableHeaderColumn  className={classes.TableHeaderColumn} columnClassName={classes.Column}  dataField="id" isKey dataAlign="center" dataSort={true}>ID</TableHeaderColumn>
+            <TableHeaderColumn className={classes.TableHeaderColumn} columnClassName={classes.Column}  dataField="name"  dataAlign="center" dataSort={true}>Ime</TableHeaderColumn>
+            <TableHeaderColumn className={classes.TableHeaderColumn} columnClassName={classes.Column}  dataField="tema"  dataAlign="left" dataSort={true}>Tema</TableHeaderColumn>
+            <TableHeaderColumn className={classes.TableHeaderColumn} columnClassName={classes.Column} dataField="completed"  dataAlign="center" dataSort={true} 
+            >Predat rad</TableHeaderColumn>
+          </BootstrapTable>
+          
+        </Aux>
+      );
+    }
   }
 };
 

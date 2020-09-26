@@ -140,7 +140,7 @@ class Auth extends Component {
             }else{
                 return(
                     <div>
-                        <Vesti isGuest={this.state.gost} isAuth={false} />
+                        <Vesti isGuest={this.state.isGost} isAuth={false} />
                     </div>
                 );
             }
