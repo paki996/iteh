@@ -12,7 +12,7 @@ class BurgerBuilder extends Component {
     return (
       <Aux>
           <Vesti/>
-          <TabelaStudenata />
+          
       </Aux>
     );
   }

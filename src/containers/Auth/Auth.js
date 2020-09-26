@@ -5,6 +5,7 @@ import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import classes from './Auth.css';
 import * as actions from '../../store/actions/index';
+import Vesti from '../../components/Burger/Vesti/Vesti';
 
 
 class Auth extends Component {
@@ -39,7 +40,8 @@ class Auth extends Component {
                 touched: false
             }
         },
-        isSignup: false
+        isSignup: false,
+        isGost: false
     }
 
     checkValidity ( value, rules ) {
@@ -97,6 +99,10 @@ class Auth extends Component {
             return {isSignup: !prevState.isSignup};
         });
     }
+    kaoGost = () => {
+        this.setState({isGost:true})
+
+    }
 
     render () {
         const formElementsArray = [];
@@ -118,7 +124,7 @@ class Auth extends Component {
                 touched={formElement.config.touched}
                 changed={( event ) => this.inputChangedHandler( event, formElement.id )} />
         ) );
-
+            if(!this.state.isGost){
         return (
             <div className={classes.Auth}>
                 <form onSubmit={this.submitHandler}>
@@ -128,8 +134,17 @@ class Auth extends Component {
                 <Button 
                     clicked={this.switchAuthModeHandler}
                     btnType="Danger">SWITCH TO {this.state.isSignup ? 'SIGN IN' : 'REGISTER'}</Button>
+                    <Button btnType="Success" clicked={this.kaoGost} >Nastavi kao Gost</Button>
             </div>
         );
+            }else{
+                return(
+                    <div>
+                        <Vesti isGuest={this.state.gost} isAuth={false} />
+                    </div>
+                );
+            }
+            
     }
 }
 
