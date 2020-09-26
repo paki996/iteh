@@ -6,6 +6,7 @@ import Button from '../../components/UI/Button/Button';
 import classes from './Auth.css';
 import * as actions from '../../store/actions/index';
 import Vesti from '../../components/Burger/Vesti/Vesti';
+import Logo from '../../components/Logo/Logo';
 
 
 class Auth extends Component {
@@ -132,6 +133,7 @@ class Auth extends Component {
             if(!this.state.isGost){
         return (
             <div className={classes.Auth}>
+                <Logo />
                 <form onSubmit={this.submitHandler}>
                     {form}
                     <Button btnType="Success" >SUBMIT</Button>

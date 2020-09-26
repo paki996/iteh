@@ -102,7 +102,7 @@ izadji(){
     } else {
       if(this.props.isGuest){
         return(
-          <div >
+          <div className={classes.Back} >
             <Toolbar isAuthenticated={false} isAuth={false} isGuest={this.props.isGuest} />
             <div className={classes.Tool}>
           <h1>Zanimljivost{this.state.vest[0].number}:</h1>
@@ -114,12 +114,12 @@ izadji(){
               <p className={classes.Para}>{this.state.news[0].vest}</p>
             </div>
             <div className={classes.Card}>
-              <h3 className={classes.Head}>{this.state.news[0].naslov}</h3>
-              <p className={classes.Para}>{this.state.news[0].vest}</p>
+              <h3 className={classes.Head}>Studenti osvojili svetsko takmicenje u PM</h3>
+              <p className={classes.Para}>Nasi studenti su posle 2 godine ponovili uspeh iz Pekinga kada su taj taj taj taj osvojili zlatnu medalju u resavanju studija slucajeva</p>
             </div>
             <div className={classes.Card}>
-              <h3 className={classes.Head}>{this.state.news[0].naslov}</h3>
-              <p className={classes.Para}>{this.state.news[0].vest}</p>
+              <h3 className={classes.Head}>Rezultati</h3>
+              <p className={classes.Para}>Ovde mozete videti rezultate:</p>
             </div>
             <div className={classes.Card}>
               <h3 className={classes.Head}>{this.state.news[0].naslov}</h3>
@@ -138,7 +138,7 @@ izadji(){
         );
       }
       return (
-        <div>
+        <div className={classes.Back}>
           <Modal show={this.state.isSelected} clicked={this.izadji}>
             <DodajVest izadji={this.izadji} />
           </Modal>

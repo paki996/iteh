@@ -1,107 +1,194 @@
-.Cont{
+
+
+ .Cont {
     width: 100%;
     
     top: 20px;
-    display: inline-flex;
+    display: block;
     position: relative;
     margin-bottom: 40px;
-}
-.Card{
-    width: 15%;
+    align-content: center;
+    vertical-align: middle;
+    align-items: center;
+  }
+  .Card {
+    width: 50%;
     height: fit-content;
     margin-top: 50px;
-    margin-left: 30px;
-        transform:matrix(1,0,0,1,0,0);
-        transition:transform 0.5s ease-in-out 0s;
-        
-        border:3px solid #e53e06;
-       
-        background:-webkit-linear-gradient(0deg, rgb(215, 168, 53) 0%, rgb(147, 83, 0) 61%);
-        background:-o-linear-gradient(0deg, rgb(215, 168, 53) 0%, rgb(147, 83, 0) 61%);
-        background:-moz-linear-gradient(0deg, rgb(215, 168, 53) 0%, rgb(147, 83, 0) 61%);
-        background:linear-gradient(0deg, rgb(215, 168, 53) 0%, rgb(147, 83, 0) 61%);
-}
-.Card:hover{
-    transform:matrix(1.6,0,0,1.6,0,0);
-    z-index: 300;
-}
-.Head{
-    border-bottom: 1px black solid ;
+    margin-left:70px;
+
+    border: 3px solid #e53e06;
+
+    background: -webkit-linear-gradient(
+      0deg,
+      rgb(215, 168, 53) 0%,
+      rgb(147, 83, 0) 61%
+    );
+    background: -o-linear-gradient(
+      0deg,
+      rgb(215, 168, 53) 0%,
+      rgb(147, 83, 0) 61%
+    );
+    background: -moz-linear-gradient(
+      0deg,
+      rgb(215, 168, 53) 0%,
+      rgb(147, 83, 0) 61%
+    );
+    background: linear-gradient(
+      0deg,
+      rgb(215, 168, 53) 0%,
+      rgb(147, 83, 0) 61%
+    );
+  }
+
+  .Head {
+    border-bottom: 1px black solid;
     border-radius: 15%;
     text-align: center;
     color: goldenrod;
-}
-.Para{
+  }
+  .Para {
     text-align: center;
-}
-.Tabela{
+  }
+  .Tabela {
     margin-top: 80px;
     margin-bottom: 30px;
-}
+    width: 100%;
+  }
 
-.Butt {
+  .Butt {
     width: 100%;
     align-items: center;
     align-content: center;
     vertical-align: middle;
     text-align: center;
     margin-bottom: 80px;
-}
-.Tool{
+  }
+  .Tool {
     margin-top: 75px;
-}
-.Zanimljivost{
-    width: 30%;
+  }
+  .Zanimljivost {
+    width: fit-content;
     height: fit-content;
     align-self: center;
     align-items: center;
     align-content: center;
     text-align: center;
-    margin-left: 35%;
+    
     margin-top: 30px;
-border-top:12px double #ff4000;
-border-right:12px ridge #ff4000;
-border-bottom:12px double #ff4000;
-border-left:12px ridge #ff4000;
-border-width:12px 12px 12px 12px;
-border-style:double ridge double ridge;
-border-color:#ff4000 #ff4000 #ff4000 #ff4000;
-border-radius:0px 50px 0px 50px;
--moz-border-radius:0px 50px 0px 50px;
--webkit-border-radius:0px 50px 0px 50px;
--webkit-box-shadow:6px 0px 20px 5px #fdff00 inset,-7px -3px 10px 0px #ff8100 ;
-box-shadow:6px 0px 20px 5px #fdff00 inset,-7px -3px 10px 0px #ff8100 ;
-}
-@media (max-width: 500px){
-    .Cont{
+    border-top: 12px double #ff4000;
+    border-right: 12px ridge #ff4000;
+    border-bottom: 12px double #ff4000;
+    border-left: 12px ridge #ff4000;
+    border-width: 12px 12px 12px 12px;
+    border-style: double ridge double ridge;
+    border-color: #ff4000 #ff4000 #ff4000 #ff4000;
+    border-radius: 0px 50px 0px 50px;
+    -moz-border-radius: 0px 50px 0px 50px;
+    -webkit-border-radius: 0px 50px 0px 50px;
+    -webkit-box-shadow: 6px 0px 20px 5px #fdff00 inset,
+      -7px -3px 10px 0px #ff8100;
+    box-shadow: 6px 0px 20px 5px #fdff00 inset, -7px -3px 10px 0px #ff8100;
+  }
+  .Back {
+    background-color: khaki;
+    width: 100%;
+  }
+
+
+
+@media (min-width: 500px) {
+    .Cont {
         width: 100%;
-        
+      
         top: 20px;
-        display: block;
+        display: inline-flex;
         position: relative;
-        margin-bottom: 100px;
-    }
-    .Card{
-        width: 150px;
+        margin-bottom: 40px;
+      }
+      .Card {
+        width: 15%;
         height: fit-content;
-        border: black solid 3px;
-        align-items: center;
-        margin-top: 15px;
-        align-content: center;
-        border-radius: 5%;
-        -webkit-box-shadow: 10px 10px 17px -6px rgba(107,0,0,1);
-        -moz-box-shadow: 10px 10px 17px -6px rgba(107,0,0,1);
-        box-shadow: 10px 10px 17px -6px rgba(107,0,0,1);
-        background: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 23%, rgba(110,27,0,1) 100%);
-    }
-    .Head{
-        border-bottom: 1px black solid ;
+        margin-top: 50px;
+        margin-left: 30px;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        transition: transform 0.5s ease-in-out 0s;
+      
+        border: 3px solid #e53e06;
+        border-radius:0px 50px 0px 50px;
+        -moz-border-radius:0px 50px 0px 50px;
+        -webkit-border-radius:0px 50px 0px 50px;
+        background: -webkit-linear-gradient(
+          0deg,
+          rgb(215, 168, 53) 0%,
+          rgb(147, 83, 0) 61%
+        );
+        background: -o-linear-gradient(
+          0deg,
+          rgb(215, 168, 53) 0%,
+          rgb(147, 83, 0) 61%
+        );
+        background: -moz-linear-gradient(
+          0deg,
+          rgb(215, 168, 53) 0%,
+          rgb(147, 83, 0) 61%
+        );
+        background: linear-gradient(0deg, rgb(215, 168, 53) 0%, rgb(147, 83, 0) 61%);
+      }
+      .Card:hover {
+        transform: matrix(1.6, 0, 0, 1.6, 0, 0);
+        z-index: 300;
+        border: 3px solid #40a4c8;
+      }
+      .Head {
+        border-bottom: 1px black solid;
         border-radius: 15%;
         text-align: center;
         color: goldenrod;
-    }
-    .Para{
+      }
+      .Para {
         text-align: center;
-    }
+      }
+      .Tabela {
+        margin-top: 80px;
+        margin-bottom: 30px;
+      }
+      
+      .Butt {
+        width: 100%;
+        align-items: center;
+        align-content: center;
+        vertical-align: middle;
+        text-align: center;
+        margin-bottom: 80px;
+      }
+      .Tool {
+        margin-top: 75px;
+      }
+      .Zanimljivost {
+        width: 30%;
+        height: fit-content;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        margin-left: 35%;
+        margin-top: 30px;
+        border-top: 12px double #ff4000;
+        border-right: 12px ridge #ff4000;
+        border-bottom: 12px double #ff4000;
+        border-left: 12px ridge #ff4000;
+        border-width: 12px 12px 12px 12px;
+        border-style: double ridge double ridge;
+        border-color: #ff4000 #ff4000 #ff4000 #ff4000;
+        border-radius: 0px 50px 0px 50px;
+        -moz-border-radius: 0px 50px 0px 50px;
+        -webkit-border-radius: 0px 50px 0px 50px;
+        -webkit-box-shadow: 6px 0px 20px 5px #fdff00 inset, -7px -3px 10px 0px #ff8100;
+        box-shadow: 6px 0px 20px 5px #fdff00 inset, -7px -3px 10px 0px #ff8100;
+      }
+      .Back {
+        background-color: khaki;
+        width: 100%;
+      }
 }
