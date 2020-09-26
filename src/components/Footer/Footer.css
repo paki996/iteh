@@ -5,8 +5,9 @@
     border-top: rgb(238, 119, 8) solid 7px;
     display: inline-block;
     width: 100%;
-   
-    bottom: 0px;
+    align-items: baseline;
+    position: relative;
+    vertical-align: super;
 }
 .Cont{
     margin-left: 50px;
@@ -14,12 +15,26 @@
     width: 25%;
     display: inline-block;
     
+    
+}
+.Cont1{
+    position: relative;
+    bottom: 64px;
+
+}
+.Cont2{
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 25%;
+}
+.Cont3{
+
 }
 .Head{
     color:rgb(238, 119, 8);
     text-shadow: orangered 5px;
-    padding: 5px;
     border-bottom: black solid 1px;
+
     
     
     box-shadow: black 1px;
@@ -33,3 +48,26 @@
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
+.Linkovi{
+    
+    text-decoration:none; color:#ffffff;
+    
+    font-size: 15px;
+    
+
+}
+.Linkovi:hover{
+    text-decoration:none; color:#ffbf28;
+}
+.Linkovi:visited{
+    text-decoration:none; color:#ffffff;
+}
+
+.A{
+    text-decoration:none;
+}
+.Kontakt{
+    color:#ffffff;
+    font-size: 15px;
+}
+
