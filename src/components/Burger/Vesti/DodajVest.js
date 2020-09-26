@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Component } from 'react';
 import Spinner from '../../UI/Spinner/Spinner';
 import withErrorHndling from '../../../hoc/withErrorHandler/withErrorHandler';
+import classes from './DodajVest.css';
+import Button from '../../UI/Button/Button'
 
 class DodajVest extends Component{
     constructor(props) {
@@ -35,12 +37,12 @@ class DodajVest extends Component{
       }
       handleSubmit(e) {
         e.preventDefault();
-    
+    if(this.state.value !== undefined){
         const data = {
          
           id: this.state.id,
-          naslov: this.state.naslov ? this.state.naslov : this.state.data[0].naslov,
-          vest: this.state.vest ? this.state.vest : this.state.data[0].vest
+          naslov: this.state.naslov ,
+          vest: this.state.vest 
         };
         console.log(this.state.data.length+"OVO JE DUZINA");
     
@@ -51,6 +53,7 @@ class DodajVest extends Component{
             console.log(data);
             console.log(this.state.data[0]);
           }) 
+        };
       }
 
     render() {
@@ -76,7 +79,10 @@ class DodajVest extends Component{
             <input type="text" name="naslov"  onChange={e => this.onChange(e)} />
             <h5>Vest:</h5>
             <textarea name="vest" id="" cols="30" rows="10"  onChange={e => this.onChange(e)}></textarea>
-            <button type="submit" className="btn-large waves-effect waves-light xbutton">Save</button>
+            <div className={classes.Buto}>
+            <button type="submit" className="btn-large waves-effect waves-light xbutton">Sacuvaj Vest</button>
+            <Button clicked={this.props.izadji} >Izadji</Button>
+            </div>
           </form>
         );
       }

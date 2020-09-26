@@ -22,6 +22,7 @@ class vesti extends Component {
   constructor(props) {
     super(props);
     this.promeni = this.promeni.bind(this);
+    this.izadji = this.izadji.bind(this);
   } 
 
   componentDidMount() {
@@ -74,15 +75,24 @@ promeni(){
   })
 }
 
+izadji(){
+  console.log("Dosao u izadji");
+  this.setState({
+    isSelected: !this.state.isSelected
+  })
+
+}
+
   render() {
+    
     
     if (this.state.vest.length === 0 || this.state.news.length === 0) {
       return <div></div>;
     } else {
       return (
         <div>
-          <Modal show={this.state.isSelected}>
-            <DodajVest />
+          <Modal show={this.state.isSelected} clicked={this.izadji}>
+            <DodajVest izadji={this.izadji} />
           </Modal>
           <h1>Zanimljivost{this.state.vest[0].number}:</h1>
           <p>{this.state.vest[0].text}</p>
