@@ -18,9 +18,9 @@ return(
     <p>IDStudenta: {props.stud.stud.id}</p>
     <p>Ime i prezime : {props.stud.stud.name}</p>
     <p>Tema: {props.stud.stud.tema}</p>
-    {zavrsen=="jeste"  ?<div ><p>Broj bodova:  <input type="number" min="0" max="40"  onInput={e => poeni(e.target.value)}/></p>  </div> : null}
-    {zavrsen=="jeste"  ?<Button 
-        clicked={props.oceni}
+    {zavrsen==="jeste"  ?<div ><p>Broj bodova:  <input type="number" min="0" max="40"  onInput={e => poeni(e.target.value)}/></p>  </div> : null}
+    {zavrsen==="jeste"  ?<Button 
+        clicked={props.oceni(brPoena)}
         btnType="Success">Oceni
     </Button>: null}
     <Button 

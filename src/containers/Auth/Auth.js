@@ -124,6 +124,11 @@ class Auth extends Component {
                 touched={formElement.config.touched}
                 changed={( event ) => this.inputChangedHandler( event, formElement.id )} />
         ) );
+        if(this.props.isAuth){
+            return(
+                <div></div>
+            );
+        }else{
             if(!this.state.isGost){
         return (
             <div className={classes.Auth}>
@@ -144,6 +149,7 @@ class Auth extends Component {
                     </div>
                 );
             }
+        }
             
     }
 }
@@ -153,5 +159,10 @@ const mapDispatchToProps = dispatch => {
         onAuth: ( email, password, isSignup ) => dispatch( actions.auth( email, password, isSignup ) )
     };
 };
+const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.auth.token !==null
+    };
+  }
 
-export default connect( null, mapDispatchToProps )( Auth );
+export default connect( mapStateToProps, mapDispatchToProps )( Auth );

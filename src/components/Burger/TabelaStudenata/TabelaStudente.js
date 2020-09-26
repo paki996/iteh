@@ -65,6 +65,10 @@ axios
   });
 }
 
+componentWillMount(){
+
+}
+
   izadji = () => {
     this.setState({isSelected: false});
     
@@ -74,12 +78,26 @@ axios
     this.setState({isSelected: false});
 
   }
-  unesiOcenu = () => {
-    
+
+  unesiOcenu = (brojP) => {
+    if(brojP !== undefined && this.state.odabrani !== [] && brojP !== -1){
     const odabrani = {...this.state.odabrani}
   odabrani.brojPoena = brojP;
-  }
 
+      const ocenjeno = this.state.odabrani.stud.completed;
+      axios.put('https://my-json-server.typicode.com/meda996/fake/student/'+this.state.odabrani.stud.id,{
+        completed: this.state.odabrani.stud.completed,
+        
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+      
+    }
+  }
 
 
   

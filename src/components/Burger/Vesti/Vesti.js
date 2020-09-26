@@ -9,6 +9,7 @@ import Button from '../../UI/Button/Button';
 import Modal from '../../UI/Modal/Modal';
 import DodajVest from "./DodajVest";
 import  Toolbar from '../../Navigation/Toolbar/Toolbar';
+import Spinner from '../../UI/Spinner/Spinner'
 
 
 
@@ -18,6 +19,7 @@ class vesti extends Component {
     news: [],
     isSelected: false,
     error: false,
+    loading: true
     
   };
   constructor(props) {
@@ -50,10 +52,11 @@ class vesti extends Component {
         console.log(dobijena);
         this.setState((previousState) => ({
           vest: [...previousState.vest, dobijena],
+          loading:false,
         }));
       })
       .catch((error) => {
-        console.log(error);
+        this.setState({ loading: false, error: true });
       });
 
     axios
@@ -63,11 +66,12 @@ class vesti extends Component {
         console.log(this.state.news);
         this.setState((previousState) => ({
           news: [...previousState.vest, dobijena],
+          loading: false
         }));
         console.log(this.state.news+"Ovo je posle get=a");
       })
       .catch((error) => {
-        console.log(error);
+        this.setState({ loading: false, error: true });
       });
   }
 
@@ -88,8 +92,13 @@ izadji(){
   render() {
     
     
-    if (this.state.vest.length === 0 || this.state.news.length === 0) {
+    if (this.state.vest.length === 0 || this.state.news.length === 0 || this.state.error) {
       return <div></div>;
+    }
+    if(this.state.loading){
+      return (<div>
+      <Spinner />
+    </div>);
     } else {
       if(this.props.isGuest){
         return(
@@ -133,8 +142,7 @@ izadji(){
           <Modal show={this.state.isSelected} clicked={this.izadji}>
             <DodajVest izadji={this.izadji} />
           </Modal>
-          <h1>Zanimljivost{this.state.vest[0].number}:</h1>
-          <p>{this.state.vest[0].text}</p>
+          
           <div className={classes.Cont}>
           <div className={classes.Card}>
               <h3 className={classes.Head}>{this.state.news[0].naslov}</h3>
@@ -160,6 +168,10 @@ izadji(){
           {this.props.isAuthenticated ? <div className={classes.Butt}  >
             <Button btnType="Success" clicked={this.promeni} >Dodaj vest</Button> </div>: null }
           <TabelaStudente isAuth={this.props.isAuthenticated} className={classes.Tabela} />
+          <div className={classes.Zanimljivost} >
+          <h3>Zanimljivost{this.state.vest[0].number}:</h3>
+          <p>{this.state.vest[0].text}</p>
+          </div>
           <Footer />
         </div>
       );
