@@ -1,0 +1,45 @@
+.BootstrapTable {
+  margin-left: 20%;
+  width: 60%;
+  height: auto;
+  vertical-align: middle;
+}
+.TableHeaderColumn {
+width: 180px;
+height: 80px;
+}
+.Column{
+  
+  width: 180px;
+height: 80px;
+}
+.Btn{
+  
+  margin-bottom: 10px;
+  margin-left: 20%;
+
+}
+.Button {
+	box-shadow: 6px -6px 6px 1px #fff6af;
+	background:linear-gradient(to bottom, #f5eaa1 5%, #ff7e0d 100%);
+	background-color:#f5eaa1;
+	border-radius:11px;
+	border:1px solid #c27e18;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffc259;
+}
+.Button:hover {
+	background:linear-gradient(to bottom, #ff7e0d 5%, #f5eaa1 100%);
+	background-color:#ff7e0d;
+}
+.Button:active {
+	position:relative;
+	
+}

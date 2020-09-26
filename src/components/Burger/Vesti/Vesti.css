@@ -1,0 +1,75 @@
+.Cont{
+    width: 100%;
+    
+    top: 20px;
+    display: inline-flex;
+    position: relative;
+    margin-bottom: 40px;
+}
+.Card{
+    width: 150px;
+    height: fit-content;
+    border: black solid 3px;
+    margin-left: 50px;
+    border-radius: 5%;
+    -webkit-box-shadow: 10px 10px 17px -6px rgba(107,0,0,1);
+    -moz-box-shadow: 10px 10px 17px -6px rgba(107,0,0,1);
+    box-shadow: 10px 10px 17px -6px rgba(107,0,0,1);
+    background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 23%, rgba(110,27,0,1) 100%);
+}
+.Head{
+    border-bottom: 1px black solid ;
+    border-radius: 15%;
+    text-align: center;
+    color: goldenrod;
+}
+.Para{
+    text-align: center;
+}
+.Tabela{
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.Butt {
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    text-align: center;
+    margin-bottom: 80px;
+}
+@media (max-width: 500px){
+    .Cont{
+        width: 100%;
+        
+        top: 20px;
+        display: block;
+        position: relative;
+        margin-bottom: 100px;
+    }
+    .Card{
+        width: 150px;
+        height: fit-content;
+        border: black solid 3px;
+        align-items: center;
+        margin-top: 15px;
+        align-content: center;
+        border-radius: 5%;
+        -webkit-box-shadow: 10px 10px 17px -6px rgba(107,0,0,1);
+        -moz-box-shadow: 10px 10px 17px -6px rgba(107,0,0,1);
+        box-shadow: 10px 10px 17px -6px rgba(107,0,0,1);
+        background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 23%, rgba(110,27,0,1) 100%);
+    }
+    .Head{
+        border-bottom: 1px black solid ;
+        border-radius: 15%;
+        text-align: center;
+        color: goldenrod;
+    }
+    .Para{
+        text-align: center;
+    }
+}
